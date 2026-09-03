@@ -1,0 +1,19 @@
+---
+description: Web-only UI changes and required MCPs for projectXweb
+alwaysApply: true
+---
+
+# projectXweb agent defaults
+
+## MCPs (use every chat)
+
+- **Codegraph** first for how/where questions. Pass `projectPath`: `/Users/wilson.daniel2/AndroidStudio Projects/projectXweb`.
+- **Filesystem MCP** to read/edit files in this repo when available.
+- **Memory Bank** project name: `projectXweb`. Read `project.md` at the start of work.
+
+## Web vs Android
+
+- Put web UI/layout/image changes behind `kIsWeb`, or in `lib/web/`.
+- Do not change Android behavior unless the user explicitly asks.
+- Android entry: `lib/main.dart`. Web shop entry: `lib/web/main_web.dart`.
+- `ProductCard` already switches to `ProductCardWeb` when `kIsWeb`.

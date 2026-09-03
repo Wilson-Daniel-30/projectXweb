@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "760673124560",
+    "firebase_url": "https://projectx-c2b3a-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "projectx-c2b3a",
+    "storage_bucket": "projectx-c2b3a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:760673124560:android:32af6f551af4ccb0415ed5",
+        "android_client_info": {
+          "package_name": "com.wilson.projectx.projectx"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg0F0ZAtj1iAQrk8BV5sWZ3JYpV9M2ZQ4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

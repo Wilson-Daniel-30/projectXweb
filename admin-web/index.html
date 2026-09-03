@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product · Oliviya Occurance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="app-bar">
+    <h1>Add Product</h1>
+  </header>
+
+  <main>
+    <form id="product-form" novalidate>
+      <h2>Basic Info</h2>
+      <label>
+        Title
+        <input name="title" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Brand Name
+        <input name="brandName" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Main Image URL
+        <input name="image" type="url" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Price
+        <input name="price" type="number" step="any" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Price After Discount
+        <input name="priceAfterDiscount" type="number" step="any" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Discount Percent
+        <input name="discountpercent" type="number" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Product Info
+        <textarea name="productInfo" rows="3" required></textarea>
+        <span class="error"></span>
+      </label>
+
+      <h2>Image List (up to 5)</h2>
+      <label>
+        Image URL 1
+        <input name="image1" type="url" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Image URL 2
+        <input name="image2" type="url">
+        <span class="error"></span>
+      </label>
+      <label>
+        Image URL 3
+        <input name="image3" type="url">
+        <span class="error"></span>
+      </label>
+      <label>
+        Image URL 4
+        <input name="image4" type="url">
+        <span class="error"></span>
+      </label>
+      <label>
+        Image URL 5
+        <input name="image5" type="url">
+        <span class="error"></span>
+      </label>
+
+      <h2>Product Rating</h2>
+      <label>
+        Average Rating
+        <input name="rating" type="number" step="any" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        Number of Reviews
+        <input name="numOfReviews" type="number" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        5 Star Count
+        <input name="numOfFiveStar" type="number" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        4 Star Count
+        <input name="numOfFourStar" type="number" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        3 Star Count
+        <input name="numOfThreeStar" type="number" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        2 Star Count
+        <input name="numOfTwoStar" type="number" required>
+        <span class="error"></span>
+      </label>
+      <label>
+        1 Star Count
+        <input name="numOfOneStar" type="number" required>
+        <span class="error"></span>
+      </label>
+
+      <button type="submit" id="submit-btn">Submit Product</button>
+    </form>
+  </main>
+
+  <div id="toast" hidden></div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
