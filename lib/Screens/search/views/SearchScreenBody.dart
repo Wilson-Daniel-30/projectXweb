@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:projectx/constants.dart';
 import 'package:projectx/ViewModel/SearchViewModel.dart';
 import 'package:projectx/Screens/product/views/product_details_screen.dart';
-import 'package:projectx/Components/product/product_card.dart';
+import 'package:projectx/components/product/product_card.dart';
 
 class SearchScreenBody extends StatelessWidget {
   const SearchScreenBody();

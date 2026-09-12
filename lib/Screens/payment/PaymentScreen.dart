@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 // import 'package:razorpay_flutter/razorpay_flutter.dart';
-import 'package:projectx/Components/cart_button.dart';
+import 'package:projectx/components/cart_button.dart';
 import 'package:projectx/constants.dart';
 import 'package:projectx/entry_point.dart';
 import 'package:projectx/ViewModel/CartViewModel.dart';

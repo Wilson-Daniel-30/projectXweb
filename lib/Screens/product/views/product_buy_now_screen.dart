@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projectx/Screens/product/views/size_guide_screen.dart';
 
-import '../../../Components/cart_button.dart';
-import '../../../Components/custom_modal_bottom_sheet.dart';
-import '../../../Components/network_image_with_loader.dart';
+import '../../../components/cart_button.dart';
+import '../../../components/custom_modal_bottom_sheet.dart';
+import '../../../components/network_image_with_loader.dart';
 import '../../../constants.dart';
 import 'added_to_cart_message_screen.dart';
 import 'components/product_list_tile.dart';

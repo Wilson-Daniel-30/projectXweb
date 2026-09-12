@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectx/Screens/product/views/product_details_screen.dart';
 
-import '../../../../Components/product/product_card.dart';
+import '../../../../components/product/product_card.dart';
 import '../../../../constants.dart';
 import '../../../../models/product_model.dart';
 

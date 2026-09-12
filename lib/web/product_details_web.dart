@@ -11,10 +11,10 @@ import 'package:projectx/ViewModel/ProductViewModel.dart';
 import 'package:projectx/models/product_model.dart';
 import 'package:provider/provider.dart';
 
-import '../Components/cart_button.dart';
-import '../Components/custom_modal_bottom_sheet.dart';
-import '../Components/product/product_card.dart';
-import '../Components/review_card.dart';
+import '../components/cart_button.dart';
+import '../components/custom_modal_bottom_sheet.dart';
+import '../components/product/product_card.dart';
+import '../components/review_card.dart';
 import '../constants.dart';
 
 /// Window width at which product details switch from a stacked phone

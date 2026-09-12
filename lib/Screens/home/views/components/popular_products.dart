@@ -2,8 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../Components/product/product_card.dart';
-import '../../../../Components/skleton/product/products_skelton.dart';
+import '../../../../components/product/product_card.dart';
+import '../../../../components/skleton/product/products_skelton.dart';
 import '../../../../ViewModel/ProductViewModel.dart';
 import '../../../../constants.dart';
 import '../../../../models/product_model.dart';

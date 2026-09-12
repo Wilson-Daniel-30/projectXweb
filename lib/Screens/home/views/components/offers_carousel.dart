@@ -2,11 +2,11 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
-import '../../../../Components/Banner/M/banner_m_style_1.dart';
-import '../../../../Components/Banner/M/banner_m_style_2.dart';
-import '../../../../Components/Banner/M/banner_m_style_3.dart';
-import '../../../../Components/Banner/M/banner_m_style_4.dart';
-import '../../../../Components/dot_indicators.dart';
+import '../../../../components/Banner/M/banner_m_style_1.dart';
+import '../../../../components/Banner/M/banner_m_style_2.dart';
+import '../../../../components/Banner/M/banner_m_style_3.dart';
+import '../../../../components/Banner/M/banner_m_style_4.dart';
+import '../../../../components/dot_indicators.dart';
 import '../../../../constants.dart';
 
 class OffersCarousel extends StatefulWidget {

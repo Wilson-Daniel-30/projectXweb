@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:projectx/Components/skleton/skelton.dart';
+import 'package:projectx/components/skleton/skelton.dart';
 import 'package:flutter/src/foundation/constants.dart';
 import 'package:projectx/web/web_image.dart';
 import '../constants.dart';

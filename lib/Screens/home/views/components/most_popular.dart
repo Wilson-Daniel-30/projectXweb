@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:projectx/Screens/product/views/product_details_screen.dart';
 
-import '../../../../Components/product/secondary_product_card.dart';
+import '../../../../components/product/secondary_product_card.dart';
 import '../../../../constants.dart';
 import '../../../../models/product_model.dart';
 import 'package:projectx/ViewModel/MostPopularViewModel.dart';

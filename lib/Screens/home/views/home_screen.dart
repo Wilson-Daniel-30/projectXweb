@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../Components/Banner/S/banner_s_style_1.dart';
-import '../../../Components/Banner/S/banner_s_style_5.dart';
+import '../../../components/Banner/S/banner_s_style_1.dart';
+import '../../../components/Banner/S/banner_s_style_5.dart';
 import '../../../ViewModel/ProductViewModel.dart';
 import '../../../constants.dart';
 import 'components/best_sellers.dart';

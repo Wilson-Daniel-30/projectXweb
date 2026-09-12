@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../Components/check_mark.dart';
+import '../../../../components/check_mark.dart';
 import '../../../../constants.dart';
 
 class ColorDot extends StatelessWidget {
