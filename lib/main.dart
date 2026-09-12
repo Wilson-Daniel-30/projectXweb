@@ -18,24 +18,16 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:projectx/Admin/DataBaseServices.dart';
 import 'Screens/checkout/views/OrderConfirmationScreen.dart';
 import 'LaunchScreen.dart';
+import 'package:projectx/web/web_storefront.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (kIsWeb) {
-    await Firebase.initializeApp(
-      options: const FirebaseOptions(
-        apiKey: "AIzaSyA8v-bKF6sFUedc7j3LpFLBiIEMUn_FpSY",
-        authDomain: "projectx-c2b3a.firebaseapp.com",
-        projectId: "projectx-c2b3a",
-        storageBucket: "projectx-c2b3a.appspot.com",
-        messagingSenderId: "760673124560",
-        appId: "1:760673124560:web:d9ad87ad48f919ef415ed5",
-        measurementId: "G-1GSD8B1QZL", // optional
-      ),
-    );
-  } else {
-    await Firebase.initializeApp();
+    await runWebStorefront();
+    return;
   }
+
+  await Firebase.initializeApp();
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
 
 
