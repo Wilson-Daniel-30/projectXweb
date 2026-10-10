@@ -38,9 +38,9 @@ class BannerMStyle2 extends StatelessWidget {
                   children: [
                     Text(
                       title.toUpperCase(),
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: grandisExtendedFont,
-                        fontSize: kIsWeb?45:28,
+                        fontSize: isWideWebBanner(context) ? 45 : 28,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
                         height: 1,
@@ -50,10 +50,10 @@ class BannerMStyle2 extends StatelessWidget {
                     if (subtitle != null)
                       Text(
                         subtitle!.toUpperCase(),
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: kIsWeb?18:12,
+                          fontSize: isWideWebBanner(context) ? 18 : 12,
                         ),
                       ),
                   ],

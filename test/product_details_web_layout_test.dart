@@ -55,6 +55,17 @@ void main() {
     expect(find.byKey(kProductDetailsStackedKey), findsOneWidget);
     expect(find.byKey(kProductDetailsWideRowKey), findsNothing);
     expect(find.text('You may also like'), findsOneWidget);
+
+    final imageAspectFinder = find.descendant(
+      of: find.byKey(kProductDetailsStackedKey),
+      matching: find.byType(AspectRatio),
+    );
+    expect(
+      tester.widget<AspectRatio>(imageAspectFinder).aspectRatio,
+      1,
+    );
+    final imageSize = tester.getSize(imageAspectFinder);
+    expect(imageSize.width, imageSize.height);
   });
 
   testWidgets('wide screen puts image and details side by side', (tester) async {

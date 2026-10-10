@@ -21,7 +21,7 @@ import '../constants.dart';
 /// layout to image | details on one row. Uses MediaQuery (the browser
 /// window), not a nested LayoutBuilder, so a max-width wrapper cannot
 /// keep this on the mobile stack.
-const double kProductDetailsWideBreakpoint = 800;
+const double kProductDetailsWideBreakpoint = kWebWideBreakpoint;
 
 const Key kProductDetailsWideRowKey = Key('productDetailsWideRow');
 const Key kProductDetailsStackedKey = Key('productDetailsStacked');
@@ -183,6 +183,7 @@ class ProductDetailsScreenWeb extends StatelessWidget {
                         ProductImages(
                           key: kProductDetailsStackedKey,
                           fullScreen: isFullScreen,
+                          aspectRatio: isFullScreen ? 0.8 : 1,
                           images: images,
                         ),
                         ProductInfo(

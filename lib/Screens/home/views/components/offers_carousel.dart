@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:flutter/foundation.dart';
 
 import 'package:flutter/material.dart';
 import '../../../../components/Banner/M/banner_m_style_1.dart';
@@ -8,6 +7,9 @@ import '../../../../components/Banner/M/banner_m_style_3.dart';
 import '../../../../components/Banner/M/banner_m_style_4.dart';
 import '../../../../components/dot_indicators.dart';
 import '../../../../constants.dart';
+
+const Key kOffersCarouselPhoneKey = Key('offersCarouselPhone');
+const Key kOffersCarouselWideKey = Key('offersCarouselWide');
 
 class OffersCarousel extends StatefulWidget {
   const OffersCarousel({
@@ -75,7 +77,7 @@ class _OffersCarouselState extends State<OffersCarousel> {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: kIsWeb? 2 :1.87,
+      aspectRatio: 1.87,
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [

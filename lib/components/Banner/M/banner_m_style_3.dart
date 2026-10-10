@@ -44,19 +44,19 @@ class BannerMStyle3 extends StatelessWidget {
                       color: Colors.white70,
                       child: Text(
                         "Infused with Devotion",
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.black54,
                           fontWeight: FontWeight.bold,
-                          fontSize: kIsWeb?18:12,
+                          fontSize: isWideWebBanner(context) ? 18 : 12,
                         ),
                       ),
                     ),
                     const SizedBox(height: defaultPadding / 2),
                     Text(
                       title.toUpperCase(),
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontFamily: grandisExtendedFont,
-                        fontSize: kIsWeb?48:28,
+                        fontSize: isWideWebBanner(context) ? 48 : 28,
                         fontWeight: FontWeight.w900,
                         color: Colors.white,
                         height: 1,

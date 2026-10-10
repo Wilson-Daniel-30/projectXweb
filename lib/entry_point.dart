@@ -1,4 +1,5 @@
 import 'package:animations/animations.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projectx/Screens/home/views/home_screen.dart';
@@ -55,17 +56,26 @@ class _EntryPointState extends State<EntryPoint> {
         // snap: true,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              colors: [Colors.white,Colors.white70,Colors.white60, Color(0xff0b2545)], // soft blue-white shades
-              begin: Alignment.bottomRight,
-              end: Alignment.topLeft,
-            ),
-          ),
-        ),
+        flexibleSpace: kIsWeb &&
+                MediaQuery.sizeOf(context).width < kWebWideBreakpoint
+            ? Container(color: Theme.of(context).scaffoldBackgroundColor)
+            : Container(
+                decoration: const BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Colors.white,
+                      Colors.white70,
+                      Colors.white60,
+                      Color(0xff0b2545)
+                    ],
+                    begin: Alignment.bottomRight,
+                    end: Alignment.topLeft,
+                  ),
+                ),
+              ),
         leadingWidth: 0,
-        centerTitle: true,
+        centerTitle: !kIsWeb,
+        titleSpacing: kIsWeb ? 0 : NavigationToolbar.kMiddleSpacing,
         title: Container(
           margin: EdgeInsets.only(left: 0),
           child: Row(

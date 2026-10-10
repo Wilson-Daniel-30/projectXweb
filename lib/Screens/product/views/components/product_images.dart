@@ -46,8 +46,10 @@ class _ProductImagesState extends State<ProductImages> {
 
   @override
   Widget build(BuildContext context) {
-    final ratio = widget.aspectRatio ??
-        (kIsWeb ? 2.0 : widget.fullScreen ? 0.8 : 1);
+    // Native app uses a 1:1 (or 0.8 fullscreen) frame. Phone web must
+    // match that and size with the screen via AspectRatio. The old web
+    // default of 2.0 cropped portraits into a short landscape strip.
+    final ratio = widget.aspectRatio ?? (widget.fullScreen ? 0.8 : 1);
 
     final content = AspectRatio(
       aspectRatio: ratio,

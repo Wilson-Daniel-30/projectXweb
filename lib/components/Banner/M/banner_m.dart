@@ -1,7 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+import '../../../constants.dart';
 import '../../network_image_with_loader.dart';
-import 'package:flutter/src/foundation/constants.dart';
+
+bool isWideWebBanner(BuildContext context) =>
+    kIsWeb && MediaQuery.sizeOf(context).width >= kWebWideBreakpoint;
 
 class BannerM extends StatelessWidget {
   const BannerM(
@@ -21,9 +25,10 @@ class BannerM extends StatelessWidget {
       child: GestureDetector(
         onTap: press,
         child: Stack(
+          fit: StackFit.expand,
           children: [
-            kIsWeb? Image.network(image):NetworkImageWithLoader(image, radius: 0),
-            Container(color: Colors.black45),
+            NetworkImageWithLoader(image, radius: 0),
+            const ColoredBox(color: Colors.black45),
             ...children,
           ],
         ),

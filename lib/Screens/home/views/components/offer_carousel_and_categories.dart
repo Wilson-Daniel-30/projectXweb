@@ -12,17 +12,21 @@ class OffersCarouselAndCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double screenWidth = MediaQuery.of(context).size.width;
+    final size = MediaQuery.sizeOf(context);
+    final isWideWeb = kIsWeb && size.width >= kWebWideBreakpoint;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // While loading use 👇
-        // const OffersSkelton(),
-        kIsWeb? Container(
-          height: screenHeight/1.5,
-          width: screenWidth,
-          child: OffersCarousel(),) : OffersCarousel(),
+        // Desktop web keeps a tall hero. Phone web uses the same
+        // aspect-ratio carousel as the Android / iOS app.
+        isWideWeb
+            ? SizedBox(
+                key: kOffersCarouselWideKey,
+                height: size.height / 1.5,
+                width: size.width,
+                child: const OffersCarousel(),
+              )
+            : const OffersCarousel(key: kOffersCarouselPhoneKey),
         // const SizedBox(height: defaultPadding / 2),
         Padding(
           padding: const EdgeInsets.all(defaultPadding),

@@ -66,6 +66,10 @@ const double defaultPadding = 16.0;
 const double defaultBorderRadious = 12.0;
 const Duration defaultDuration = Duration(milliseconds: 300);
 
+/// Browser widths at or above this use the desktop storefront layout.
+/// Phone web should follow the native app's fixed aspect ratios.
+const double kWebWideBreakpoint = 800;
+
 final passwordValidator = MultiValidator([
   RequiredValidator(errorText: 'Password is required'),
   MinLengthValidator(8, errorText: 'password must be at least 8 digits long'),
