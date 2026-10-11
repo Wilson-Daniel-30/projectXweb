@@ -5,6 +5,7 @@ import '../../../components/Banner/S/banner_s_style_1.dart';
 import '../../../components/Banner/S/banner_s_style_5.dart';
 import '../../../ViewModel/ProductViewModel.dart';
 import '../../../constants.dart';
+import '../../../web/cod_ticker_web.dart';
 import 'components/best_sellers.dart';
 import 'components/flash_sale.dart';
 import 'components/most_popular.dart';
@@ -20,6 +21,7 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: CustomScrollView(
           slivers: [
+            if (kIsWeb) const SliverToBoxAdapter(child: CodTickerWeb()),
             const SliverToBoxAdapter(child: OffersCarouselAndCategories()),
             const SliverToBoxAdapter(child: PopularProducts()),
             kIsWeb
