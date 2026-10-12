@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 import '../models/product_model.dart';
 import 'package:projectx/ViewModel/FlashSaleViewModel.dart';
 import 'package:projectx/Admin/DataBaseServices.dart';
+import 'package:projectx/web/web_routes.dart';
 import 'dart:math';
 
 class ProductViewModel extends ChangeNotifier {
@@ -14,6 +15,24 @@ class ProductViewModel extends ChangeNotifier {
   List<ProductModel> get products => _products;
   bool get isLoading => _isLoading;
   String? get error => _error;
+
+  ProductModel? findBySlug(String slug) {
+    for (final product in _products) {
+      if (productSlugFromTitle(product.title) == slug) {
+        return product;
+      }
+    }
+    return null;
+  }
+
+  ProductModel? findByTitle(String title) {
+    for (final product in _products) {
+      if (product.title == title) {
+        return product;
+      }
+    }
+    return null;
+  }
 
   Future<List<ProductModel>> fetchProducts() async {
     _isLoading = true;

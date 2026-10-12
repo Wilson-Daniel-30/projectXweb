@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../../components/product/product_card.dart';
-import '../../../../components/skleton/product/products_skelton.dart';
 import '../../../../ViewModel/ProductViewModel.dart';
 import '../../../../constants.dart';
 import '../../../../models/product_model.dart';
-import '../../../product/views/product_details_screen.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:projectx/web/web_product_navigation.dart';
 
 class PopularProducts extends StatelessWidget {
   const PopularProducts({super.key});
@@ -69,12 +68,7 @@ class PopularProducts extends StatelessWidget {
                         priceAfterDiscount: product.priceAfterDiscount,
                         discountpercent: product.discountpercent,
                         press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ProductDetailsScreen(productModel: product,),
-                            ),
-                          );
+                          openProductDetails(context, product);
                         },
                       ),
                     );

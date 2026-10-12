@@ -1,11 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:projectx/Screens/product/views/product_details_screen.dart';
 
 import '../../../../components/product/secondary_product_card.dart';
 import '../../../../constants.dart';
 import '../../../../models/product_model.dart';
 import 'package:projectx/ViewModel/MostPopularViewModel.dart';
+import 'package:projectx/web/web_product_navigation.dart';
 import 'package:provider/provider.dart';
 
 
@@ -63,13 +63,9 @@ class MostPopular extends StatelessWidget {
                           discountpercent:
                               mostPopularProducts[index].discountpercent,
                           press: () {
-                            Navigator.push(
+                            openProductDetails(
                               context,
-                              MaterialPageRoute(
-                                builder: (context) => ProductDetailsScreen(
-                                  productModel: mostPopularProducts[index],
-                                ),
-                              ),
+                              mostPopularProducts[index],
                             );
                           },
                         ),

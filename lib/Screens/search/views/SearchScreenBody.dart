@@ -5,6 +5,7 @@ import 'package:projectx/constants.dart';
 import 'package:projectx/ViewModel/SearchViewModel.dart';
 import 'package:projectx/Screens/product/views/product_details_screen.dart';
 import 'package:projectx/components/product/product_card.dart';
+import 'package:projectx/web/web_product_navigation.dart';
 
 class SearchScreenBody extends StatelessWidget {
   const SearchScreenBody();
@@ -153,14 +154,7 @@ class _SearchScreenBodyWeb extends StatelessWidget {
                             priceAfterDiscount: product.priceAfterDiscount,
                             discountpercent: product.discountpercent,
                             press: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => ProductDetailsScreen(
-                                    productModel: product,
-                                  ),
-                                ),
-                              );
+                              openProductDetails(context, product);
                             },
                           );
                         },

@@ -1,5 +1,7 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:projectx/entry_point.dart';
+import 'package:projectx/web/web_routes.dart';
 
 
 class LaunchScreen extends StatefulWidget {
@@ -23,6 +25,14 @@ class _LaunchScreenState extends State<LaunchScreen> with SingleTickerProviderSt
       curve: Curves.easeInOutCubicEmphasized,
     );
     _controller.forward();
+
+    if (kIsWeb && isProductPath(Uri.base.path)) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        Navigator.of(context).pushReplacementNamed(Uri.base.path);
+      });
+      return;
+    }
 
     Future.delayed(Duration(seconds: 2), () {
       Navigator.of(context).pushReplacement(

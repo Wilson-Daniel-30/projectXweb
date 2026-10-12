@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:projectx/Screens/product/views/product_details_screen.dart';
 import 'package:projectx/ViewModel/FlashSaleViewModel.dart';
 import 'package:provider/provider.dart';
 import '../../../../components/Banner/M/banner_m_with_counter.dart';
@@ -8,6 +7,7 @@ import '../../../../components/product/product_card.dart';
 import '../../../../constants.dart';
 import '../../../../models/product_model.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:projectx/web/web_product_navigation.dart';
 
 class FlashSale extends StatelessWidget {
   const FlashSale({
@@ -77,10 +77,7 @@ class FlashSale extends StatelessWidget {
                         priceAfterDiscount: flashProduct.priceAfterDiscount,
                         discountpercent: flashProduct.discountpercent,
                         press: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => ProductDetailsScreen(productModel: flashProduct,)),
-                          );
+                          openProductDetails(context, flashProduct);
                         },
                       ),
                     );
