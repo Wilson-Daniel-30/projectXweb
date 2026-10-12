@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:projectx/web/web_product_deep_link.dart';
+import 'package:projectx/web/web_product_navigation.dart';
 import 'package:projectx/web/web_routes.dart';
 
 void main() {
@@ -65,5 +66,40 @@ void main() {
     expect(find.text('Product not found'), findsOneWidget);
     expect(find.text('Back to shop'), findsOneWidget);
     expect(find.textContaining('missing-product'), findsOneWidget);
+    expect(find.byTooltip('Back to shop'), findsOneWidget);
+  });
+
+  testWidgets('back goes to shop when the product page is the only route',
+      (tester) async {
+    await tester.pumpWidget(
+      MaterialApp(
+        onGenerateInitialRoutes: (_) => [
+          MaterialPageRoute(
+            settings: const RouteSettings(name: '/product/x'),
+            builder: (context) => Scaffold(
+              appBar: AppBar(
+                leading: IconButton(
+                  icon: const Icon(Icons.arrow_back),
+                  tooltip: 'Back to shop',
+                  onPressed: () => navigateBackToShop(context),
+                ),
+              ),
+              body: const Text('Product'),
+            ),
+          ),
+        ],
+        onGenerateRoute: (settings) {
+          return MaterialPageRoute(
+            settings: settings,
+            builder: (_) => const Scaffold(body: Text('Shop home')),
+          );
+        },
+      ),
+    );
+
+    expect(find.text('Product'), findsOneWidget);
+    await tester.tap(find.byTooltip('Back to shop'));
+    await tester.pumpAndSettle();
+    expect(find.text('Shop home'), findsOneWidget);
   });
 }

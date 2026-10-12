@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projectx/Screens/product/views/product_details_screen.dart';
 import 'package:projectx/ViewModel/ProductViewModel.dart';
+import 'package:projectx/web/web_product_navigation.dart';
 import 'package:provider/provider.dart';
 
 /// Resolves `/product/<slug>` after [ProductViewModel] finishes loading.
@@ -36,6 +37,14 @@ class WebProductNotFoundScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          tooltip: 'Back to shop',
+          onPressed: () => navigateBackToShop(context),
+        ),
+      ),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24),

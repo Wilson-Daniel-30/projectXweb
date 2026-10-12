@@ -6,6 +6,16 @@ import 'package:projectx/models/product_model.dart';
 import 'package:projectx/web/web_product_deep_link.dart';
 import 'package:projectx/web/web_routes.dart';
 
+/// Goes back to the shop. Deep links have no stack to pop, so replace with home.
+void navigateBackToShop(BuildContext context) {
+  final navigator = Navigator.of(context);
+  if (navigator.canPop()) {
+    navigator.pop();
+    return;
+  }
+  navigator.pushNamedAndRemoveUntil(kShopRoute, (route) => false);
+}
+
 /// Opens product details. On web this updates the address bar to `/product/<slug>`.
 void openProductDetails(BuildContext context, ProductModel product) {
   if (kIsWeb) {

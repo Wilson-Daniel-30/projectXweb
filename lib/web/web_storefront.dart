@@ -7,6 +7,7 @@ import 'package:projectx/ViewModel/ProductViewModel.dart';
 import 'package:projectx/ViewModel/SearchViewModel.dart';
 import 'package:projectx/theme/app_theme.dart';
 import 'package:projectx/LaunchScreen.dart';
+import 'package:projectx/entry_point.dart';
 import 'package:projectx/web/web_product_deep_link.dart';
 import 'package:projectx/web/web_product_navigation.dart';
 import 'package:projectx/web/web_routes.dart';
@@ -61,6 +62,10 @@ class WebStorefrontApp extends StatelessWidget {
         final slug = productSlugFromPath(initialRoute);
         if (slug != null) {
           return [
+            MaterialPageRoute(
+              settings: const RouteSettings(name: kShopRoute),
+              builder: (_) => const EntryPoint(),
+            ),
             MaterialPageRoute(
               settings: RouteSettings(name: initialRoute),
               builder: (_) => WebProductDeepLinkScreen(slug: slug),

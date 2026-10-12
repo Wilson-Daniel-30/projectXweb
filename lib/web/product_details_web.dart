@@ -11,6 +11,7 @@ import 'package:projectx/ViewModel/ProductViewModel.dart';
 import 'package:projectx/models/product_model.dart';
 import 'package:provider/provider.dart';
 
+import 'package:projectx/web/web_product_navigation.dart';
 import 'package:projectx/web/web_routes.dart';
 
 import '../components/cart_button.dart';
@@ -109,6 +110,12 @@ class ProductDetailsScreenWeb extends StatelessWidget {
                         backgroundColor:
                             Theme.of(context).scaffoldBackgroundColor,
                         floating: true,
+                        automaticallyImplyLeading: false,
+                        leading: IconButton(
+                          icon: const Icon(Icons.arrow_back),
+                          tooltip: 'Back to shop',
+                          onPressed: () => navigateBackToShop(context),
+                        ),
                       ),
                       if (isWide)
                         SliverToBoxAdapter(

@@ -55,6 +55,7 @@ void main() {
     expect(find.byKey(kProductDetailsStackedKey), findsOneWidget);
     expect(find.byKey(kProductDetailsWideRowKey), findsNothing);
     expect(find.text('You may also like'), findsOneWidget);
+    expect(find.byTooltip('Back to shop'), findsOneWidget);
 
     final imageAspectFinder = find.descendant(
       of: find.byKey(kProductDetailsStackedKey),
